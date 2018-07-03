@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Критерии бота: строка файла содержит одно или несколько слов «bot»
+
+cat ./access.log | grep "bot" > ./access_bot_filter
+
+# Критерии бота: строка файла содержит одно или несколько слов «sitemap»
+
+cat ./access.log | grep "sitemap" > ./access_sitemap_filter
+
+# Критерии бота: строка файла содержит одно или несколько слов «robot»
+
+cat ./access.log | grep "robot" > ./access_robot_filter
+
+# Критерии бота: строка файла содержит одно или несколько слов «robots.txt»
+
+cat ./access.log | grep "robots.txt" > ./access_robot.txt_filter
+
+echo "Bot activity statistics:"
+wc -l ./access_*
+
+echo "Job's done! Check current folder."

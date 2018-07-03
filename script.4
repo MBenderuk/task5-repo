@@ -1,0 +1,14 @@
+#!/bin/bash
+
+a=$1
+b=$2
+c=$3
+if [ "$c" = 0 ]
+   then echo "ERROR!!! C=0"
+   exit
+fi
+
+rez=$((($a+$b)/$c))
+
+echo "(a+b)/c="$rez
+

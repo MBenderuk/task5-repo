@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dict=(bot sitemap robot robots.txt)
+
+for i in "${dict[@]}"
+do
+   cat ./access.log | grep $i > ./access_"$i"_filter
+done
+
+echo "Bot activity statistics:"
+wc -l ./access_*
+
+echo "Job's done! Check current folder."

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Вывести в отдельный файл все строки с текстом «PHP Notice»
+
+cat ./error.log | grep "PHP Notice" > ./PHP_Notice_filter
+
+# вывести в отдельный фай все строки «PHP Notice» и текстом «Undefined variable»
+
+cat ./error.log | grep "PHP Notice" | grep "Undefined variable" > ./PHP_Notice_and_Undefined_variable_filter
+
+# вывести в отдельный фай все строки «PHP Notice» и текстом «Undefined offset»
+
+cat ./error.log | grep "PHP Notice" | grep "Undefined offset" > ./PHP_Notice_and_Undefined_offset_filter
+
+# Вывести в отдельный файл все строки с текстом «PHP Warning»
+
+cat ./error.log | grep "PHP Warning" > ./PHP_Warning_filter
+
+echo "Job's done! Check current folder."
