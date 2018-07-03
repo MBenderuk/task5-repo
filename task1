@@ -1,0 +1,1 @@
+ls -l * | sed 's/^-/File &/g; s/^d/Directory &/g; s/^l/Link &/g'

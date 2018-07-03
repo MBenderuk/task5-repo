@@ -1,0 +1,1 @@
+read -p "Enter date (dd.mm): " date; cat /var/log/syslog | awk {' month=$1; day=$2; datet="`date --date="$month $day" +%d.%m`"; if ($datet == $date) print $0'} | head -1

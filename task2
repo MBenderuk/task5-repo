@@ -1,0 +1,10 @@
+#!/bin/sh
+
+read -p "Enter date (dd.mm): " edate; 
+eday=`echo $edate | cut -d"." -f1` ; 
+#echo $eday ; 
+emonth=`echo $edate | cut -d"." -f2`; 
+#echo $emonth; 
+cmonth=`date --date="$emonth/$eday" +%b` ; 
+#echo $cmonth ; 
+awk -v dday="$eday" -v mmonth="$cmonth" '{ if ($1 == mmonth && $2 == dday) print $0 }' /var/log/syslog
